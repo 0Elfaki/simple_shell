@@ -14,8 +14,7 @@ if [[ $(git status --porcelain) ]]; then
     read commit_message
     
     # Commit changes with the provided message or a default one
-    git commit -m " $(date '+%Y-%m-%d %H:%M:%S') - ${commit_message:-No message provided}"
-    
+    git commit -m " $(date '+%Y-%m-%d %H:%M:%S') - ${commit_message: }"
     # Push changes to the remote repository
     git push origin master
     
